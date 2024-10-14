@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Categories</h1>
+        
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                    <li>{{ category.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No categories found.</p>
+        {% endif %}
+        
+        <a href="{% url 'add_category' %}">Add New Category</a>
+    </div>
+{% endblock %}
